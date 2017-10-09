@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--常用符号 %p日志级别 %d{日期时间格式}日期时间 %c类名 %M方法名 %m日志消息 %n换行符 -->
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%p %d{yyyy/MM/dd HH:mm:ss} [%t][%c.%M] - %m%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="logfile"
+			  class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>%p %d{yyyy/MM/dd HH:mm:ss} [%t][%c.%M] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./logs/yxd.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+					class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<prudent>true</prudent>
+	</appender>
+	<logger name="console" level="console" />
+	<root level="DEBUG">
+		<appender-ref ref="console" />
+	</root>
+	<root level="INFO">
+		<appender-ref ref="logfile" />
+	</root>
+</configuration>
