@@ -13,7 +13,7 @@
 <div class="header">
 
     <div class="dl-title">
-      MySpringBoot登陆成功
+      MySpringBoot登陆
     </div>
 
 </div>
@@ -38,6 +38,7 @@
             success:function(data){   
                if(data.rspCode=="00"){
                	 alert(data.rspMsg);
+               	 window.location.href="loginAction/logins";
                }else{
                	alert(data.rspMsg);
                }
@@ -45,7 +46,7 @@
         }); 
     }
 </script>
-当前登录人 ${ userName }
+
 		<table class="table table-bordered table-hover definewidth m10">
 			<tr class="pos">
 				<td class="tableleft" style="text-align: right">UserName</td>
