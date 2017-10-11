@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Component;
 
-import com.yxd.model.AuthorizeQPayVo;
 import com.yxd.model.User;
 
 @Component

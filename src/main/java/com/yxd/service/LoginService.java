@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yxd.mapper.LoginMapper;
-import com.yxd.model.AuthorizeQPayVo;
 import com.yxd.model.User;
 
 @Service
