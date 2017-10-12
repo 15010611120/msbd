@@ -30,17 +30,18 @@ public class MyFirstSpringBootController {
 	public Map<String,Object> springBootLogin(@RequestParam Map<String, Object> mapParam,HttpSession session){
 		logger.info("param:"+mapParam);
 		Map<String,Object> map= new HashMap<String,Object>();
-		 String userName=(String) mapParam.get("userName");
-		 //调用servce 查询数据库可用户名与密码是否正确
-		 List<User> listLogin = loginService.queryLogin(map);
-		 if(listLogin.size()>0) {
-			 map.put("rspCode", "00");
-			 map.put("rspMsg", "成功");
-		 }else {
-			 map.put("rspCode", "01");
-			 map.put("rspMsg", "失败");
-		 }
-		 session.setAttribute("userName", userName);
+		String userName=(String) mapParam.get("userName");
+		//调用servce 查询数据库可用户名与密码是否正确
+		List<User> listLogin = loginService.queryLogin(map);
+		if(listLogin.size()>0) {
+			map.put("rspCode", "00");
+			map.put("rspMsg", "成功");
+		}else {
+			map.put("rspCode", "01");
+			map.put("rspMsg", "失败");
+		}
+		session.setAttribute("userName", userName);
+		 
 		return map;
 	}
 	
