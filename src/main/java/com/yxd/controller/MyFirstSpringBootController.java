@@ -32,7 +32,7 @@ public class MyFirstSpringBootController {
 		Map<String,Object> map= new HashMap<String,Object>();
 		String userName=(String) mapParam.get("userName");
 		//调用servce 查询数据库可用户名与密码是否正确
-		List<User> listLogin = loginService.queryLogin(map);
+		List<User> listLogin = loginService.queryLogin(mapParam);
 		if(listLogin.size()>0) {
 			map.put("rspCode", "00");
 			map.put("rspMsg", "成功");
@@ -40,6 +40,8 @@ public class MyFirstSpringBootController {
 			map.put("rspCode", "01");
 			map.put("rspMsg", "失败");
 		}
+		map.put("rspCode", "00");
+		map.put("rspMsg", "成功");
 		session.setAttribute("userName", userName);
 		 
 		return map;
@@ -50,6 +52,14 @@ public class MyFirstSpringBootController {
 	public ModelAndView springBootLogins(HttpSession session){
 		String userName = (String) session.getAttribute("userName");
 		ModelAndView mv = new ModelAndView("/index","userName",userName);
+		return mv;
+		 
+	}
+	
+	@RequestMapping("/loginjump")
+	@ResponseBody
+	public ModelAndView springBootLoginjump(HttpSession session){
+		ModelAndView mv = new ModelAndView("/login");
 		return mv;
 		 
 	}

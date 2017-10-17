@@ -38,7 +38,7 @@
             success:function(data){   
                if(data.rspCode=="00"){
                	 alert(data.rspMsg);
-               	 window.location.href="loginAction/logins";
+               	 window.location.href="logins";
                }else{
                	alert(data.rspMsg);
                }
