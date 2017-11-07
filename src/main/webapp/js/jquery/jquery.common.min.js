@@ -1,0 +1,328 @@
+/*
+--15.10
+--获取系统当前时间
+--elem:控件或元素Id
+*/
+function showTime(){ 
+	var d = new Date();
+	var w = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六'); 
+	var c = '';
+	//c += '系统时间：';
+	c += d.getFullYear()+'年'; 
+	c += [(d.getMonth()<10?c=d.getMonth():d.getMonth())+1]+'月'; 
+	c += (d.getDate()<10?c ='0'+d.getDate():d.getDate())+'日　'; 
+	c += (d.getHours()<10?c ='0'+d.getHours():d.getHours())+':'; 
+	c += (d.getMinutes()<10?c ='0'+d.getMinutes():d.getMinutes())+':'; 
+	c += (d.getSeconds()<10?c ='0'+d.getSeconds():d.getSeconds())+'　';
+	c += w[d.getDay()];
+	return c;  
+} 
+/*
+--15.10
+--加入收藏
+--elem:控件或元素Id, class
+--domName:域名
+--domCnName:中文名称
+*/
+function toAddFavorites(elem, domName, domCnName){
+	var $el = $(elem);
+	var $eh = $(elem).length;
+	if($eh > 0){
+		$el.bind("click",function(){
+			var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL';
+			if(document.all){
+				window.external.addFavorite(domName, domCnName);
+			}else if (window.sidebar) {
+				window.sidebar.addPanel(domCnName, domName, "");
+			}else {
+				alert('您可以尝试通过快捷键　ctrl + D　加入到收藏夹！');
+			}return false;
+		});
+	}
+}
+/*
+--15.10
+--获取当前元素是否为空（注：入参为元素控件ID如 ‘smort’）
+--elem:元素id
+--isfocus:是否获取焦点
+*/
+function toCkdElemVoid(elem, isfocus){
+	var $el, $vl, $eh
+	$el = $('#'+elem);
+	$vl = $el.val();
+	$eh = $vl.length;
+	if($vl=='' || $vl==null || $eh<1){ 
+		if(isfocus == 1){
+			$el.focus(); 
+		}
+		return false;
+	}return true;
+}
+/*
+--15.10
+--判断当前元素是否已设定样式已设定后变更入参样式
+--elem:元素Id
+--elemOpe:操作类型
+--elemResClass:重定样式
+*/
+function toCkdElemClassByChange(elem, elemOpe, elemResClass){
+	var $obj, $eos, $erc
+	$obj = $('#'+elem);
+	if(elemResClass!=null || elemResClass!=''){
+		$eos = $obj.attr("class");
+		$erc = elemResClass;
+		if(elemOpe == 1) $obj.removeClass($eos); $obj.addClass($erc);
+	}return false;
+} 
+/*
+--15.10
+--判断当前元素是否符合传入有效正则表达式
+--elem:元素Id
+--objReg:正则表达式
+*/
+function toCkdElemByRegular(elem, objReg){
+	var $el = $('#'+elem);
+	var $vl = $el.val();
+	if(objReg.test($vl) == false){ 
+		$el.focus(); 
+		return true;
+	}else {
+		return false
+	}
+}
+/*
+--15.10
+--清空所有表单元素，彻底清空不还愿
+--f:表单名
+*/
+function toResetFrmElem(f){
+	$(':input',f)   
+	.not(':button, :submit, :reset, :hidden')   
+	.val('')   
+	.removeAttr('checked')   
+	.removeAttr('selected');  		
+}
+/*
+--15.10
+--控制元素隐藏，有效时间，样式
+--elem:元素Id
+--eTime:隐藏时间
+*/
+function toCtlElemHide(elem, eTime){
+	var $eh = $('#'+elem).is(":visible");
+	var $el = $('#'+elem);
+	eTime = eTime || 0; 
+	if(!$eh == false) $el.hide(eTime);	
+}
+/*
+--15.10
+--控制元素显示，有效时间，样式
+--elem:元素Id
+--eTime:隐藏时间
+*/
+function toCtlElemShow(elem, eTime){
+	var $eh = $('#'+elem).is(":visible");
+	var $el = $('#'+elem);
+	eTime = eTime || 0; 
+	if($eh == false) $el.show(eTime);	
+}
+/*
+--15.10
+--跳转页控制管理
+--strUrl:指定页URL
+--target:是否为新窗体打开
+*/
+function toUrl(strUrl,target){
+	if(strUrl != null || strUrl != ""){
+		if(target == '_blank')
+			window.open(strUrl, target);
+		else
+			window.location = strUrl;
+	}
+}
+/*
+--15.10
+--click事件跳转页面
+--elem:元素Id, class
+--ul:指定跳转页面
+--ta:是否为新窗体打开
+*/
+function toUrlByEvent(elem, ul, ta){
+	var $el = $(elem);
+	if($el.length > 0){
+		$el.bind("click",function(){
+			if(ul != null || ul != ""){
+				if(ta == '_blank')
+					window.open(ul, ta);
+				else
+					window.location = ul;
+			}
+		});	
+	}
+}
+/*
+--15.04
+--操作左侧选中菜单样式
+--elem:元素Id, class
+--type:加载样式
+*/
+function toMenuStyle(elem, type){
+	var $el = $(elem);
+	$el.parent('li').addClass(type);
+}
+/*
+--15.10
+--click事件控制指定元素或控件显示或者隐藏
+--elem:操作元素Id，class
+--toElem：被操作的元素Id
+--type:hide（隐藏）show（显示）
+*/
+function toCtlElemSwOrHeByEvent(elem, toElem, type){
+	var $el = $(elem);
+	if($el.length > 0){
+		$el.bind("click",function(){
+			if(type == 'hide'){
+				toCtlElemHide(toElem);
+			}else if(type == 'show'){
+				toCtlElemShow(toElem);
+			}
+		});
+	}
+}
+/*
+--15.10
+--控制验证码刷新，点击自动生成新验证码
+--elem:元素Id
+--eTime:隐藏时间
+*/
+function toCtlCaptchas(elem){
+	var $el = $('#'+elem);
+	var $eh = $('#'+elem).length;
+	if($eh > 0){
+		$el.bind("click",function(){
+			var url = 'createValidateCode?flag='+ Math.random();
+			$el.attr('src',url);
+		});	
+	};
+}
+/*
+--15.10
+--控制验证码刷新，页面提交验证调用并指定验证控件
+--elem:元素Id
+--iElem:输入控件Id
+*/
+function toCkdCaptchas(elem, iElem){
+	var $el = $('#'+elem);
+	var $ie = $('#'+iElem);
+	var $eh = $('#'+elem).length;
+	if($eh > 0){
+		var url = 'createValidateCode?flag='+ Math.random();
+		$el.attr('src',url);
+		$ie.val('');
+	}
+}
+/*
+--15.11
+--数据加载loading···
+--elem：填充所需控件元素
+--
+*/
+function toCltDataLoading(elem){
+	var $el 	= $(elem);
+	var objText	= '努力加载中';
+	var delVal	= 0;
+	$el.empty();
+	
+	$("<div>",{
+		id:'loadTit',
+		html:objText + '<span class="titSp">.</span><span class="titSp">.</span><span class="titSp">.</span>',
+		"class":"childElemTit"
+	}).appendTo($el);
+	
+	/*$("<div>",{
+		id:'loadBox',
+		html:'<img class="childElemBtn" src="/images/common/loading.jpg" />',
+		"class":"childElemBox"
+	}).appendTo($el);*/
+
+	delVal = 50;
+	function autoMove(){
+		delVal++;
+		if(delVal>400){
+			delVal=50; 
+		}
+		$(".childElemBtn").css("left",delVal);
+	}
+	setInterval(autoMove,8);
+	
+	var deNum=0;
+	function autoTsq(){
+		$(".titSp").css("color","#F5FAFD");
+		setTimeout(function(){$(".titSp").eq(0).css("color","#29B6FF")},0);
+		setTimeout(function(){$(".titSp").eq(1).css("color","#29B6FF")},500);
+		setTimeout(function(){$(".titSp").eq(2).css("color","#29B6FF")},1000);
+	}
+	setInterval(autoTsq,1500);
+}
+
+
+
+/**
+ * 页面加载动态创建弹出遮罩Loading层 maskLayer
+ * 
+ * @param objParentElem : 主容器对象 (body)
+ * @param objParent : 遮罩层底层元素Id (动态)
+ * @param objItem : 遮罩层提示元素层Id (动态)
+ * @param objPrompt : 提示语 (动态)
+ * @param objPromptStyle: 提示层字体显示样式
+ */
+function createLoadPromptMaskLayer(objParentElem, objParent, objItem, objPrompt, objPromptStyle) {
+	if ($(objParent).length > 0) $(objParent).remove();
+
+	$("<div>", {
+		id : objParent,
+		"class" : "maskLayerGray"
+	}).appendTo($(objParentElem));
+	$("<div>", {
+		id : objItem,
+		"class" : "maskLayerGrayPrompt"
+	}).appendTo($('#' + objParent));
+
+	var objLoadImg = '<img src="images/pics/loding.gif" border="0" hspace="3" align="absmiddle" />&nbsp;';
+	var objText = "数据努力加载中......";
+	if (objPrompt != '') objText = objPrompt;
+
+	var delVal = 0;
+	$('#' + objItem).empty();
+	$("<div>", {
+		id : 'loadTit',
+		html : objLoadImg + objText,
+		"class" : objPromptStyle
+	}).appendTo($('#' + objItem));
+} 
+
+
+/**
+ * 绑定显示事件假象Loading数据
+ * 
+ * @param objParent : 遮罩层底层元素Id (动态)
+ * @param objItem : 遮罩层提示元素层Id (动态)
+ */
+function controlLoadPromptMaskLayer(objParent, objItem) {
+	$(objParent).show();
+	$(objItem).show();
+}
+/**
+ * 关闭事件假象Loading数据
+ * 
+ * @param objParent : 遮罩层底层元素Id (动态)
+ * @param objItem : 遮罩层提示元素层Id (动态)
+ */
+function closePromptMaskLayer(objParent,objItem){
+	$(objParent).hide();
+	$(objItem).hide();
+}
+
+
+
+

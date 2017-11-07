@@ -1,161 +1,103 @@
-<%@ page pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>MySpringBootDemo</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="${pageContext.request.contextPath}/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
-    <link href="${pageContext.request.contextPath}/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
-    <link href="${pageContext.request.contextPath}/assets/css/main-min.css" rel="stylesheet" type="text/css" />
-    <link href="${pageContext.request.contextPath}/maincss/css/maincss.css" rel="stylesheet" type="text/css" />
-</head>
-
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/bui-min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/common/main-min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/config-min.js"></script>
-<script>
-
-
-</script>
-<style type="text/css">
-    table{
-    	margin:auto;
-        border-collapse:collapse;
-    }
-    table td{
-        border:1px solid #ccc;
-        width:1200px;
-    }
-    .div{ margin:0 auto; width:1200px; height:300px; } 
-    
-   .bigBannerGif {
-   	 top:130px;
-     background: url(${pageContext.request.contextPath}/assets/img/ani_bg.jpg) no-repeat;
-	}
-	.le{
-		float:left;
-	}
-	.ri{
-		float:right;
-	}
-	.abc{ 
-		color:black;
-		font-size:16px
-	} 
-	.divMeg{
-		top:1800px;
-		margin:0 auto; width:1200px; height:300px;
-	}
-	divri{
-	margin:0 auto; width:0px; height:30px; 
-	margin-left:2000px
-	}
-</style>
-<body>
-    
-<div class="header">
-
-    <div class="dl-title">
-    <div class="le">
-    	MySpringBoot笔记首页
-    </div>
-    </div>
-</div>
- <div class="ri">当前登录人 :${ userName }</div>
- </br>
- <div class="ri" id="timeShow"></div>
-    <label id="time"></label>
-<!-- header -->
-
-<div class="webHead">
-	<div class="head middle_new">
-
-		<div class="webNav">
-			<div id="chk1" class="nav" onmouseover="this.style.cursor='pointer'">
-				<a hidefocus="true" onclick="changHeadStyle(1)" title="SpringBoot笔记">首页</a>
-			</div>
-			<div id="chk2" class="nav" onmouseover="this.style.cursor='pointer'">
-				<a hidefocus="true" onclick="changHeadStyle(2)">个人笔记</a>
-			</div>
-			<div id="chk3" class="nav" onmouseover="this.style.cursor='pointer'">
-				<a hidefocus="true" onclick="changHeadStyle(3)" title="源码">源码</a>
-			</div>
-			<div id="chk4" class="nav " onmouseover="this.style.cursor='pointer'">
-				<a hidefocus="true" onclick="changHeadStyle(4)">demo</a>
-			</div>
-		</div>
-		<div class="headRight">
-			<div class="register" id="hideDiv">
-				<a hidefocus="true" class="reg" href="">免费注册</a>
-			</div>
-				<a hidefocus="true" class="login" href="loginAction/loginjump" target="_blank">登录</a>
-		</div>
-	</div>
-</div>
-
-<div class="div bigBannerGif">
-</div>
-<div class="divMeg"></div>
-<div class="abc divri">W3CShool:<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></div>
-
-<script>
-var a="${userName}";
-if(a!=""){
-	$("#hideDiv").hide();
-	$(".login").hide();
-} 
-$("#chk1").removeClass();
-$("#chk1").addClass("nav");
-/* $("#chk2").addClass("nav navCheck"); */
-function changHeadStyle(a){
-	if(a=="1"){
-		$("#chk1").removeClass().addClass("nav");
-		$("#chk2").removeClass().addClass("nav");
-		$("#chk3").removeClass().addClass("nav");
-		$("#chk4").removeClass().addClass("nav");
-		$("#chk1").addClass("nav navCheck"); 
-	}
-	if(a=="2"){
-		$("#chk1").removeClass().addClass("nav");
-		$("#chk2").removeClass().addClass("nav");
-		$("#chk3").removeClass().addClass("nav");
-		$("#chk4").removeClass().addClass("nav");
-		$("#chk2").addClass("nav navCheck"); 
-	}
-	if(a=="3"){
-		$("#chk1").removeClass().addClass("nav");
-		$("#chk2").removeClass().addClass("nav");
-		$("#chk3").removeClass().addClass("nav");
-		$("#chk4").removeClass().addClass("nav");
-		$("#chk3").addClass("nav navCheck"); 
-	}
-	if(a=="4"){
-		$("#chk1").removeClass().addClass("nav");
-		$("#chk2").removeClass().addClass("nav");
-		$("#chk3").removeClass().addClass("nav");
-		$("#chk4").removeClass().addClass("nav");
-		$("#chk4").addClass("nav navCheck"); 
-	}
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+     
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">   <%-- 在IE运行最新的渲染模式 --%>
+		<meta name="viewport" content="width=device-width, initial-scale=1">   <%-- 初始化移动浏览显示 --%>
+		<meta name="Author" content="Dreamer-1.">
+		
+		<!-- 引入各种CSS样式表 -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/index.css">	<!-- 修改自Bootstrap官方Demon，你可以按自己的喜好制定CSS样式 -->
+		<link rel="stylesheet" href="css/font-change.css">	<!-- 将默认字体从宋体换成微软雅黑（个人比较喜欢微软雅黑，移动端和桌面端显示效果比较接近） -->		
+		
+		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		/*
+		 * 对选中的标签激活active状态，对先前处于active状态但之后未被选中的标签取消active
+		 * （实现左侧菜单中的标签点击后变色的效果）
+		 */
+		$(document).ready(function () {
+			$('ul.nav > li').click(function (e) {
+				//e.preventDefault();	加上这句则导航的<a>标签会失效
+				$('ul.nav > li').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+		function changeSrc(url){
+			document.getElementById("content").src=url;
+		}
+		</script>
+		<title>- 后台管理系统 -</title>
+	</head>
 	
-}
+	<body>
+	<!-- 顶部菜单（来自bootstrap官方Demon）==================================== -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      		<div class="container">
+        		<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+		            	<span class="sr-only">Toggle navigation</span>
+		            	<span class="icon-bar"></span>
+		            	<span class="icon-bar"></span>
+		            	<span class="icon-bar"></span>
+					</button>
+	          		<a class="navbar-brand" href="index.jsp">yangxiaodong.com</a>
+        		</div>
+        		
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">			            
+						<li><a href="javascript:void(0)" onclick=""><i class="fa fa-users"></i> 用户列表</a></li>	
+						<li><a href="javascript:void(0)" onclick=""><i class="fa fa-list-alt"></i> 产品列表</a></li>
+						<li><a href="javascript:void(0)" onclick="" ><i class="fa fa-list"></i> 订单列表</a></li>	
+					</ul>
+          			
+        		</div>
+      		</div>
+    	</nav>
 
-//页面展示动态时间
-var t = null;
-t = setTimeout(time,1000);//开始执行
-function time()
-{
-   clearTimeout(t);//清除定时器
-   dt = new Date();
-   var h=dt.getHours();
-   var m=dt.getMinutes();
-   var s=dt.getSeconds();
-   document.getElementById("timeShow").innerHTML =  "现在的时间为："+h+"时"+m+"分"+s+"秒";
-   t = setTimeout(time,1000); //设定定时器，循环执行             
-} 
+	<!-- 左侧菜单选项========================================= -->
+		<div class="container-fluid">
+			<div class="row-fluie">
+				<div class="col-sm-3 col-md-2 sidebar">		
+					<ul class="nav nav-sidebar">
+						<!-- 一级菜单 -->
+						<li class="active"><a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-user"></i>&nbsp; 用户管理 <span class="sr-only">(current)</span></a>
+						</li> 
+						<!-- 二级菜单 -->
+						<!-- 注意一级菜单中<a>标签内的href="#……"里面的内容要与二级菜单中<ul>标签内的id="……"里面的内容一致 -->
+						<ul id="userMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-users"></i> 用户列表</a></li>
+						</ul>
+						<li><a href="#productMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-globe"></i>&nbsp; 产品管理 <span class="sr-only">(current)</span></a>
+						</li> 
+						<ul id="productMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
+						</ul>
+						<li><a href="#recordMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-file-text"></i>&nbsp; 订单管理 <span class="sr-only">(current)</span></a>
+						</li> 
+						<ul id="recordMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 订单列表</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-   
-   
-</script>
-</body>
+<!-- 右侧内容展示==================================================   -->   		
+ 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<h1 class="page-header"><i class="fa fa-cog fa-spin"></i>&nbsp;控制台<small>&nbsp;&nbsp;&nbsp;欢迎使用yxd后台管理系统</small></h1>
+						<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
+						<iframe id="content" scrolling="auto" frameborder="0" width="100%" height="700px" src="http://www.w3school.com.cn/tags/att_iframe_scrolling.asp"/>
+				</div> 
+	</body>
 </html>

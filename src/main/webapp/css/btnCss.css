@@ -1,0 +1,222 @@
+@CHARSET "UTF-8";
+/* 创建 */
+.btn_create {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #6699FF;
+	border: 1px solid #6699FF;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 提交 */
+.btn_submit {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #6699FF;
+	border: 1px solid #6699FF;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 引入 */
+.btn_import {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 取消 */
+.btn_cancel {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 返回 */
+.btn_return {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+
+/* 输出 */
+.btn_print {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 更新 */
+.btn_update {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #6699FF;
+	border: 1px solid #6699FF;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+ /* 删除 */
+.btn_delete {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #FF6666;
+	border: 1px solid #FF6666;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 不能使用 */
+.btn_enable {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #33CC33;
+	background-color: #EEE;
+	border: 1px solid #EEE;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 不能使用 */
+.btn_disable {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FF6666;
+	background-color: #EEE;
+	border: 1px solid #EEE;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 查询 */
+.btn_query {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #6699FF;
+	border: 1px solid #6699FF;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 查询全部 */
+.btn_queryAll {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+.btn_act {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #F93;
+	border: 1px solid #F93;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+/* 复制 */
+.btn_copy {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #FFF;
+	background-color: #F93;
+	border: 1px solid #F93;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+.btn_info {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #333;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+.btn_unavailable {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+	color: #999;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	min-height: 24px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+}

@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/*
+ *	Tabel Style
+/*--------------------------------------------------------------------------*/
+.tableNormal {
+	background-color: #EEE;
+/* 	border: 1px solid #FFF;  */
+	margin: 5px 0px;
+}
+
+.tableNormal tr {
+	background-color: #FFF;
+}
+
+.tableNormal th {
+	background-color: #FFF;
+	color: #666;
+	font-weight: bold;
+	padding: 3px;
+	margin: 1px;
+	border-bottom: none;
+	white-space: nowrap;
+	text-align: left;
+	height: 23px;
+	background-image: url(../images/bg/line_gray05.gif);
+	background-repeat: repeat-x;
+	background-position: top top;
+}
+
+.tableNormal td {
+	height: 23px;
+	padding: 3px;
+}
+
+.tableNormal input {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+}
+
+.tableNormal textarea {
+	padding: 4px;
+	margin: 0px;
+}
+
+/* 不换行EXT */
+.tableNowarp {
+	background-color: #EEE;
+	border: 1px solid #FFF;
+	margin: 5px 0px;
+	visibility: hidden;
+}
+
+.tableNowarp tr {
+	background-color: #FFF;
+}
+
+.tableNowarp th {
+	width: auto;
+	background-color: #FFF;
+	color: #666;
+	font-weight: bold;
+	padding: 3px;
+	margin: 1px;
+	border-bottom: none;
+	white-space: nowrap;
+	text-align: left;
+	height: 23px;
+	background-image: url(../images/bg/line_gray05.gif);
+	background-repeat: repeat-x;
+	background-position: top top;
+}
+
+.tableNowarp td {
+	width: auto;
+	padding: 3px 6px 3px 3px;
+	white-space: nowrap;
+	height: 23px;
+}
+
+.tableNowarp td div * {
+	-o-text-overflow: clip;
+	text-overflow: clip;
+}
+
+.tableNowarp input {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+}
+
+.tableNowarp textarea {
+	padding: 4px;
+	margin: 0px;
+}
+
+/* 不换行列表 */
+.tableNw {
+	background-color: #EEE;
+	border: 1px solid #FFF;
+	margin: 5px 0px;
+}
+
+.tableNw tr {
+	background-color: #FFF;
+}
+
+.tableNw th {
+	background-color: #FFF;
+	color: #666;
+	font-weight: bold;
+	padding: 3px;
+	margin: 1px;
+	border-bottom: none;
+	white-space: nowrap;
+	text-align: left;
+	height: 23px;
+	background-image: url(../images/bg/line_gray05.gif);
+	background-repeat: repeat-x;
+	background-position: top top;
+}
+
+.tableNw td {
+	padding: 3px 6px 3px 3px;
+	white-space: nowrap;
+	height: 23px;
+}
+
+.tableNw input {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+}
+
+.tableNw textarea {
+	padding: 4px;
+	margin: 0px;
+}
+
+/* 详情表格样式 */
+.tableNormalDetail {
+	background-color: #EEE;
+	border: 1px solid #FFF;
+	margin: 5px 0px;
+}
+
+.tableNormalDetail tr {
+	background-color: #FFF;
+}
+
+.tableNormalDetail th {
+	background-color: #FFF;
+	color: #666;
+	font-weight: bold;
+	padding: 3px;
+	margin: 1px;
+	border-bottom: none;
+	white-space: nowrap;
+	text-align: left;
+	height: 23px;
+}
+
+.tableNormalDetail td {
+	height: 23px;
+	padding: 3px;
+}
+
+.tableNormalDetail .frameTitle {
+	padding: 10px;
+	text-align: center;
+}
+
+.tableNormalDetail div {
+	border: 1px #EEE solid;
+	background-color: #FFF;
+	color: #333;
+	font-weight: bold;
+	padding: 5px 0px 0px 3px;
+	min-height: 22px;
+	background-image: url(../images/bg/line_gray05.gif);
+	background-repeat: repeat-x;
+	background-position: top top;
+	padding: 5px 0px 0px 3px;
+}
+
+.tableNormalDetail ul {
+	padding: 15px 25px;
+	marign: 0px;
+	list-style: none;
+	background-color: #FFF;
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	border-color: #EEE;
+	background-color: #FFF
+}
+
+.tableNormalDetail li {
+	margin: 5px 0px 15px 0px;
+	background-color: #FFF;
+}
+
+.tableNormalDetail li label {
+	font-weight: bold;
+	height: 20px;
+	display: block;
+}
+
+.tableNormalDetail li span {
+	line-height: 20px;
+}
+
+.tableNormalDetail input {
+	padding: 2px 4px 3px 4px;
+	margin: 0px;
+}
+
+.tableNormalDetail textarea {
+	padding: 4px;
+	margin: 0px;
+}
+
+/*---------------显示表格线样式 wupei------------------*/
+.tablePrint {
+	background-color: #EEE;
+	border: 1px solid gray;
+	margin: 5px 0px;
+	border-collapse: collapse; 
+}
+
+.tablePrint tr {
+	background-color: #FFF;
+	border: 1px solid gray;
+}
+
+.tablePrint th {
+	background-color: #FFF;
+	color: #666;
+	font-weight: bold;
+	padding: 1px;
+	margin: 1px;
+	white-space: nowrap;
+	text-align: left;
+	height:18px;
+	background-image: url(../images/bg/line_gray05.gif);
+	background-repeat: repeat-x;
+	background-position: top top;
+	border: 1px solid gray;
+}
+
+.tablePrint td{
+	height: 4px;
+	padding:1px;
+	border:1px solid gray;
+}
+
+.tablePrint tr table td{ 
+	border:0px solid gray;
+}
+/*--------------------------------------*/
