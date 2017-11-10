@@ -41,7 +41,7 @@ public class MyFirstSpringBootController {
 	@RequestMapping("/productListJump")
 	@ResponseBody
 	public ModelAndView springBootProductjump(HttpSession session){
-		ModelAndView mv = new ModelAndView("/pages/productList");
+		ModelAndView mv = new ModelAndView("/pages/product/productList");
 		return mv;
 		 
 	}
@@ -88,8 +88,20 @@ public class MyFirstSpringBootController {
 		 u2.setOperator("杨晓东");
 		 u2.setAddTime(myD);
 		 uList.add(u2);
-		 ModelAndView mv = new ModelAndView("/pages/productList","list",uList);
+		 String name="茶品";
+		 request.setAttribute("name", name);
+		 ModelAndView mv = new ModelAndView("/pages/product/productList","list",uList);
 		 return mv;       
-		}
+	}
+	
+	/**
+	 * 添加产品
+	 * @return
+	 */
+	@RequestMapping("/productAdd")
+	@ResponseBody
+	public ModelAndView productAdd() {
+		 return new ModelAndView("/pages/product/productAdd");
+	}
     
 }

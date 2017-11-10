@@ -23,45 +23,43 @@
 <body>
 	<div>
 	<div class="frameTitle">我是用户列表 (っ´Ι`)っ</div>
-		<form name="frmAdd" id="frmAdd" method="post" action="saveGutrainingDepositRadix" enctype="multipart/form-data" >
-			<fieldset style="padding:0 5px 0 5px;margin-bottom:5px;font-weight:100;weight:100%;margin-top:10px">
-			<legend><span style="font-size:14px">用户列表</span></legend>
-				<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tableNormal">
-					
-					<tr>
-						<td style="text-align: right;">用户姓名:</td>
-						<td>
-							<input type="text" id="userName" name="userName" readonly="readonly" onclick="" value="杨晓东" placeholder="点击选择服务部门" />
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align: right;">职务归属:</td>
-						<td>
-							<input type="text" id="serviceDeptName" name="serviceDeptName" readonly="readonly" onclick="" value="业务开发部" placeholder="点击选择服务部门" />
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align: right;">用户手机:</td>
-						<td>
-							<input type="text" id="userPhone" name=""userPhone"" onkeyup="clearNoNum(this)" onblur="clearNoNum(this);" value="15010611110" readonly="readonly" placeholder="" />
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align: right;"> 备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</td>
-						<td>
-							<textarea name="tdNote" id="tdNote" maxlength="20" rows="3" cols="22"></textarea>
-						</td>
-					</tr>
-					<tr>
-					<td>&nbsp;</td>
-					<td colspan="3">
-						<input type="button" class="btn_submit" name="btnSubmit" id="btnSubmit" value="提交" onclick="saveGu()">
-						<input type="button" class="btn_cancel" name="btnCancel" id="btnCancel" value="放弃" onclick="toUrl('findGutrainingDepositRadix');" >
+		<fieldset style="padding:0 5px 0 5px;margin-bottom:5px;font-weight:100;weight:100%;margin-top:10px">
+		<legend><span style="font-size:14px">用户列表</span></legend>
+			<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tableNormal">
+				
+				<tr>
+					<td style="text-align: right;">用户姓名:</td>
+					<td>
+						<input type="text" id="userName" name="userName" readonly="readonly" onclick="" value="杨晓东" placeholder="点击选择服务部门" />
 					</td>
 				</tr>
-				</table>
-			</fieldset>
-		</form>
+				<tr>
+					<td style="text-align: right;">职务归属:</td>
+					<td>
+						<input type="text" id="serviceDeptName" name="serviceDeptName" readonly="readonly" onclick="" value="业务开发部" placeholder="点击选择服务部门" />
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">用户手机:</td>
+					<td>
+						<input type="text" id="userPhone" name=""userPhone"" onkeyup="clearNoNum(this)" onblur="clearNoNum(this);" value="15010611110" readonly="readonly" placeholder="" />
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right;"> 备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</td>
+					<td>
+						<textarea name="tdNote" id="tdNote" maxlength="20" rows="3" cols="22"></textarea>
+					</td>
+				</tr>
+				<tr>
+				<td>&nbsp;</td>
+				<td colspan="3">
+					<input type="button" class="btn_submit" name="btnSubmit" id="btnSubmit" value="提交" onclick="saveGu()">
+					<input type="button" class="btn_cancel" name="btnCancel" id="btnCancel" value="放弃" onclick="toUrl('findGutrainingDepositRadix');" >
+				</td>
+			</tr>
+			</table>
+		</fieldset>
 	</div>
 </body>
 </html>

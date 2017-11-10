@@ -28,8 +28,8 @@ function productListQuery(){
 }
 //添加
 function addOrUpdatePage(){
-	var url = "/loginAction/productListQuery"
-	showPopWinNoBtn(url,'添加产品','80%',400);
+	var url = "/loginAction/productAdd"
+	showPopWinNoBtn(url,'添加产品','40%',220);
 }
 //重置
 function changeClear(url){
@@ -58,7 +58,7 @@ function changeClear(url){
 				<td>产品名称：</td>
 				<td><input id="productName" name="productName" value=""/></td>
 				<td>产品类型：</td>
-				<td><input id="productType" name="productType" value=""/></td>
+				<td><input id="productType" name="productType" value="${name}"/></td>
 				<td>入库时间：</td>
 				<td><input type="text" onFocus="var checkOutDate=$dp.$('checkOutDate');WdatePicker({onpicked:function(){receiveType.focus();queryDay();},dateFmt:'yyyy-MM-dd HH:mm',minDate:'%y-%M-{%d}'})" 
 				class="Wdate" size="10" maxlength="20" value="${ checkInDateVo }" id="checkInDate" name="checkInDate" readonly="readonly"></td>
@@ -104,7 +104,7 @@ function changeClear(url){
 		<tr>
 			<td>
 			<input type="button" name="btnAdd" id="btnAdd" class="btn_create" onclick="addOrUpdatePage()" value="新增" />
-			<input type="button" name="btnAdd" id="btnAdd" class="btn_create"  onclick="" value="修改" />
+			<input type="button" name="btnUpdate" id="btnUpdate" class="btn_create"  onclick="" value="修改" />
 			<input type="button" name="btnDel" id="btnDel" class="btn_delete" onclick="" value="删除" />
 			<input type="button" name="btnLog" id="btnLog" class="btn_act" onclick="" value="日志" />
 			</td>
