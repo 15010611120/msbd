@@ -104,6 +104,11 @@
 			<artifactId>fastdfs-client-java</artifactId>
 			<version>5.0.0</version>
 		</dependency>
+		<dependency>  
+	      <groupId>com.github.pagehelper</groupId>  
+	      <artifactId>pagehelper-spring-boot-starter</artifactId>  
+	      <version>1.0.0</version>  
+		</dependency>
   </dependencies>
   
   <build>
