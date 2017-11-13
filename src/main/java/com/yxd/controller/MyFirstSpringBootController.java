@@ -103,5 +103,15 @@ public class MyFirstSpringBootController {
 	public ModelAndView productAdd() {
 		 return new ModelAndView("/pages/product/productAdd");
 	}
+	
+	/**
+	 * 计算器
+	 * @return
+	 */
+	@RequestMapping("/calculator")
+	@ResponseBody
+	public ModelAndView calculator() {
+		 return new ModelAndView("/pages/calculator/calculator");
+	}
     
 }

@@ -3,6 +3,11 @@
 @import url("font.css");
 
 @import url("table.css");
+
+html{
+    height:100%;
+    background-color:#408080;
+}
 /*
  *	Common Style
 /*--------------------------------------------------------------------------*/

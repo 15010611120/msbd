@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* font style */
+.font_black { color:#333 }
+.font_gray { color:#999 }
+.font_grayDeep { color:#666 }
+.font_orange { color:#F60 }
+.font_green { color:#6C6 }
+.font_green_s1 { color:#093 }
+.font_blue { color:#09F }
+.font_blueDeep { color:#06C }
+.font_red { color:#cc3333 }
+.font_white { color:#FFF }
+.font_utour { color:#ED0677 }
+.font_cancel { color:#C96; text-decoration:line-through; }
+.font_cancel * { color:#C96; }
+.font_change { color:#c0c0c0; text-decoration:line-through; }
+.font_change * { color:#c0c0c0; }
+.font_bold { font-weight:bold }
+.font_del { color:#999; text-decoration:line-through }
+.font_14 { font-size:14px }
+.font_12 { font-size:12px }
+.font_10 { font-size:10px }
+.font_yh16 { font-family: 微软雅黑, 黑体; font-size: 16px; line-height:16px; }
+.font_yh18 { font-family: 微软雅黑, 黑体; font-size: 18px; line-height:18px; }
+.font_yh24 { font-family: 微软雅黑, 黑体; font-size: 24px; line-height:24px; }
+
+/* label background font */
+.label_black { background-color:#333; color:#FFF; padding:4px; }
+.label_green { background-color:#6C6; color:#FFF; padding:4px; }
+.label_red { background-color:#FF6666; color:#FFF; padding:4px; }
+.label_orange { background-color:#F60; color:#FFF; padding:4px; }
+.label_gray { background-color:#999; color:#FFF; padding:4px; }
+.label_grayDeep { background-color:#666; color:#FFF; padding:4px; }
+.label_blue { background-color:#09F; color:#FFF; padding:4px; }
+.label_blueDeep { background-color:#06C; color:#FFF; padding:4px; }
