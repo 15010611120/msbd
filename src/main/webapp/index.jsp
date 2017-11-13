@@ -51,8 +51,8 @@
         		
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">			            
-						<li><a href="javascript:void(0)" onclick=""><i class="fa fa-users"></i> 用户列表</a></li>	
-						<li><a href="javascript:void(0)" onclick=""><i class="fa fa-list-alt"></i> 产品列表</a></li>
+						<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-users"></i> 用户列表</a></li>	
+						<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
 						<li><a href="javascript:void(0)" onclick="" ><i class="fa fa-list"></i> 订单列表</a></li>	
 					</ul>
           			
@@ -78,7 +78,6 @@
 							<i class="fa fa-globe"></i>&nbsp; 产品管理 <span class="sr-only">(current)</span></a>
 						</li> 
 						<ul id="productMeun" class="nav nav-list collapse menu-second">
-							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
 							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
 						</ul>
 						<li><a href="#recordMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
