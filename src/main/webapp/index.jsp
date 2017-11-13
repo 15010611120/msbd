@@ -86,7 +86,7 @@
 						</li> 
 						<ul id="recordMeun" class="nav nav-list collapse menu-second">
 							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 订单列表</a></li>
-							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;</a></li>
 						</ul>
 					</ul>
 				</div>
