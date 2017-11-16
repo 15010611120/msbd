@@ -26,7 +26,6 @@
 		<fieldset style="padding:0 5px 0 5px;margin-bottom:5px;font-weight:100;weight:100%;margin-top:10px">
 		<legend><span style="font-size:14px">用户列表</span></legend>
 			<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tableNormal">
-				
 				<tr>
 					<td style="text-align: right;">用户姓名:</td>
 					<td>
@@ -42,7 +41,13 @@
 				<tr>
 					<td style="text-align: right;">用户手机:</td>
 					<td>
-						<input type="text" id="userPhone" name=""userPhone"" onkeyup="clearNoNum(this)" onblur="clearNoNum(this);" value="15010611110" readonly="readonly" placeholder="" />
+						<input type="text" id="userPhone" name="userPhone" onkeyup="clearNoNum(this)" onblur="clearNoNum(this);" value="15010611110" readonly="readonly" placeholder="" />
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:</td>
+					<td>
+						<input type="text" id="userAddress" name="userAddress" onblur="clearNoNum(this);" value="北京市西城区金运大厦" readonly="readonly" placeholder="" />
 					</td>
 				</tr>
 				<tr>
@@ -52,11 +57,11 @@
 					</td>
 				</tr>
 				<tr>
-				<td>&nbsp;</td>
-				<td colspan="3">
+				<!--<td>&nbsp;</td>
+				 <td colspan="3">
 					<input type="button" class="btn_submit" name="btnSubmit" id="btnSubmit" value="提交" onclick="saveGu()">
 					<input type="button" class="btn_cancel" name="btnCancel" id="btnCancel" value="放弃" onclick="toUrl('findGutrainingDepositRadix');" >
-				</td>
+				</td> -->
 			</tr>
 			</table>
 		</fieldset>

@@ -19,15 +19,13 @@ import com.yxd.model.Product;
 import com.yxd.model.User;
 import com.yxd.service.LoginService;
 
-
+@SuppressWarnings("unused")
 @Controller
 @RequestMapping("/loginAction")
 public class MyFirstSpringBootController {
 	
-	@SuppressWarnings("unused")
 	@Autowired
 	private LoginService loginService;
-	@SuppressWarnings("unused")
 	private static Logger logger = Logger.getLogger(MyFirstSpringBootController.class);
 	
 	@RequestMapping("/userListJump")
@@ -93,6 +91,14 @@ public class MyFirstSpringBootController {
 		 ModelAndView mv = new ModelAndView("/pages/product/productList","list",uList);
 		 return mv;       
 	}
+	
+	/*@RequestMapping("/productListQuery")
+	@ResponseBody
+	public ModelAndView showEdit(HttpServletRequest request){
+		 List<AgTest> listLogin = loginService.queryM();
+		 ModelAndView mv = new ModelAndView("/pages/product/productList");
+		 return mv;       
+	}*/
 	
 	/**
 	 * 添加产品

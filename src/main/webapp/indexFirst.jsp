@@ -10,6 +10,7 @@
 		
 		<!-- 引入各种CSS样式表 -->
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- 		<link rel="stylesheet" href="css/bootstraps.min.css"> -->
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/index.css">	<!-- 修改自Bootstrap官方Demon，你可以按自己的喜好制定CSS样式 -->
 		<link rel="stylesheet" href="css/font-change.css">	<!-- 将默认字体从宋体换成微软雅黑（个人比较喜欢微软雅黑，移动端和桌面端显示效果比较接近） -->		
@@ -17,6 +18,10 @@
 		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
+		var session_email = '<%=session.getAttribute("email")%>';
+		if(session_email == "null"){
+				window.location.href="/login";
+		}
 		/*
 		 * 对选中的标签激活active状态，对先前处于active状态但之后未被选中的标签取消active
 		 * （实现左侧菜单中的标签点击后变色的效果）
@@ -51,7 +56,7 @@
         		
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">			            
-						<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-users"></i> 用户列表</a></li>	
+						<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-user"></i> 用户列表</a></li>	
 						<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
 						<li><a href="javascript:void(0)" onclick="" ><i class="fa fa-list"></i> 订单列表</a></li>	
 					</ul>
@@ -72,7 +77,7 @@
 						<!-- 二级菜单 -->
 						<!-- 注意一级菜单中<a>标签内的href="#……"里面的内容要与二级菜单中<ul>标签内的id="……"里面的内容一致 -->
 						<ul id="userMeun" class="nav nav-list collapse menu-second">
-							<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-users"></i> 用户列表</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-user"></i> 用户列表</a></li>
 						</ul>
 						<li><a href="#productMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
 							<i class="fa fa-globe"></i>&nbsp; 产品管理 <span class="sr-only">(current)</span></a>
@@ -85,7 +90,13 @@
 						</li> 
 						<ul id="recordMeun" class="nav nav-list collapse menu-second">
 							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 订单列表</a></li>
-							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;&nbsp;</a></li>
+						</ul>
+						<li><a href="#luckDrawMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-users"></i>&nbsp; 抽奖活动<span class="sr-only">(current)</span></a>
+						</li> 
+						<ul id="luckDrawMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-users"></i> 抽奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 						</ul>
 					</ul>
 				</div>
