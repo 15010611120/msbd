@@ -87,7 +87,7 @@ public class SpringBootLoginController {
 	@RequestMapping("/register")
 	@ResponseBody
 	public ModelAndView register(HttpSession session){
-		return new ModelAndView("/pages/login/register");
+		return new ModelAndView("/pageslogin/register");
 	}
 
 }

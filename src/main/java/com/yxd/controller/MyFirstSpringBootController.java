@@ -3,7 +3,9 @@ package com.yxd.controller;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,12 +14,17 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yxd.model.Product;
+import com.yxd.model.TerModel;
 import com.yxd.model.User;
 import com.yxd.service.LoginService;
+import com.yxd.util.Page;
 
 @SuppressWarnings("unused")
 @Controller
@@ -55,14 +62,18 @@ public class MyFirstSpringBootController {
 		return new ModelAndView("/pages/productList","list",uList);
 		
 	}*/
-	@RequestMapping("/productListQuery")
+/*	@RequestMapping("/productListQuery")
 	@ResponseBody
-	public ModelAndView showEdit(HttpServletRequest request){
+	public ModelAndView showEdit(HttpServletRequest request,
+			 @RequestParam(required=true,defaultValue="1") Integer page,  
+	            @RequestParam(required=false,defaultValue="1") Integer pageSize,
+	            @RequestParam Map mapParam){
+		Object pr=mapParam.get("product");
+		 PageHelper.startPage(page, pageSize);
 		 Date now = new Date(); 
 		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//可以方便地修改日期格式
 		 String myD = dateFormat.format( now ); 
 		 List<Product> uList= new ArrayList<Product>();
-		 
 		 Product u = new Product();
 		 u.setProductName("mPos");
 		 u.setProductType("mPOS3.2.3");
@@ -87,11 +98,49 @@ public class MyFirstSpringBootController {
 		 u2.setAddTime(myD);
 		 uList.add(u2);
 		 String name="茶品";
+		 int count = loginService.queryTercount();
 		 request.setAttribute("name", name);
-		 ModelAndView mv = new ModelAndView("/pages/product/productList","list",uList);
-		 return mv;       
-	}
+		 PageInfo<Product> p=new PageInfo<Product>(uList); 
+		 System.out.println(p.getList());
+//		 ModelAndView mv = new ModelAndView("/pages/product/productList","list",uList);
+		 
+		 Map<String, Object> map = new HashMap<String, Object>();
+		 Page p1=new Page("/productListQuery");
+		 p1.setItemCount(count);
+		 p1.setSearchKeys("product", "Qpos");
+		 
+		 ModelAndView mv = new ModelAndView();
+		 mv.addObject("list",uList);
+		 mv.addObject("pages",p1.getPageInfo());
+		 mv.setViewName("/pages/product/productList");
+		 return mv;
+		        
+	}*/
 	
+	@RequestMapping("/productListQuery")
+	@ResponseBody
+	public ModelAndView showEdit(HttpServletRequest request,
+	            @RequestParam Map mapParam){
+		 Object pr=mapParam.get("product");
+		 String pageNo=(String) mapParam.get("pageNo");
+		 Page p=new Page("/loginAction/productListQuery",mapParam);
+		 
+		 mapParam.put("pageNm", p.getPageNum());
+		 mapParam.put("pageBigSize", p.getPageBigSize());
+		 List<TerModel> tList = loginService.queryTerList(mapParam);
+		 int count = loginService.queryTercount();
+
+		 Map<String, Object> map = new HashMap<String, Object>();
+		 p.setItemCount(count);
+		 p.setSearchKeys("product", "Qpos");
+		 
+		 ModelAndView mv = new ModelAndView();
+		 mv.addObject("list",tList);
+		 mv.addObject("pages",p.getPageInfo());
+		 mv.setViewName("/pages/product/productList");
+		 return mv;
+		        
+	}
 	/*@RequestMapping("/productListQuery")
 	@ResponseBody
 	public ModelAndView showEdit(HttpServletRequest request){
