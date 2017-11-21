@@ -104,11 +104,27 @@
 			<artifactId>fastdfs-client-java</artifactId>
 			<version>5.0.0</version>
 		</dependency>
-		<dependency>  
+		<!-- <dependency>  
 	      <groupId>com.github.pagehelper</groupId>  
 	      <artifactId>pagehelper-spring-boot-starter</artifactId>  
 	      <version>1.0.0</version>  
-		</dependency>
+		</dependency> -->
+		
+		 <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+         <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.3</version>
+        </dependency>
   </dependencies>
   
   <build>

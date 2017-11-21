@@ -1,12 +1,32 @@
 package com.yxd.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
+
+@Table(name="yxd_product")
+@NameStyle(value=Style.normal)
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String productName;
 	private String productType;
 	private String addTime;
 	private String Remarks;
 	private String Operator;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getProductName() {
 		return productName;
 	}
