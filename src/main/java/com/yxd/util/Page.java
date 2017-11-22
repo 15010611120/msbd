@@ -62,7 +62,7 @@ public class Page {
 
 	// 计算最小行
 	public void pageSum() {
-		this.pNo = (this.pageNo - 1) * this.pageSize;
+		this.pNo = (this.pageNo - 1) * this.pageSize+1;
 		this.pSize = this.pageNo * this.pageSize;
 	}
 
