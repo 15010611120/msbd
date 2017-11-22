@@ -2,6 +2,7 @@ package com.yxd.util;
 
 import java.util.Map;
 
+@SuppressWarnings("rawtypes")
 public class Page {
 	private int pageNo = 1;
 	private int pageSize = 0;
@@ -9,8 +10,8 @@ public class Page {
 	private int itemCount = 0;
 	private String action = "";
 	private String searchKeys = "";
-	private int pageNum = 1;
-	private int pageBigSize = 0;
+	private int pNo = 1;
+	private int pSize = 0;
 
 	private Integer[] arrPageSize = { Integer.valueOf(5), Integer.valueOf(10), Integer.valueOf(15), Integer.valueOf(20),
 			Integer.valueOf(25), Integer.valueOf(30), Integer.valueOf(50), Integer.valueOf(100), Integer.valueOf(200),
@@ -29,13 +30,25 @@ public class Page {
 		this.searchKeys = searchKeys;
 	}
 
-	public Page(String queryString) {
+
+	/**
+	 * @param mapParam 为页面中的查询条件
+	 */
+	public Page(Map mapParam) {
+		String queryString = mapParam.toString();
+		queryString = queryString.replace("{", "");
+		queryString = queryString.replace("}", "");
 		initQueryString(queryString);
 		initPageSize();
 		initPageList();
+		pageSum();
 	}
-
-	@SuppressWarnings("rawtypes")
+	
+	/**
+	 * 
+	 * @param actionName 是reuestMapping的值
+	 * @param mapParam 是页面中的查询条件
+	 */
 	public Page(String actionName, Map mapParam) {
 		String queryString = mapParam.toString();
 		queryString = queryString.replace("{", "");
@@ -49,8 +62,8 @@ public class Page {
 
 	// 计算最小行
 	public void pageSum() {
-		this.pageNum = (this.pageNo - 1) * this.pageSize;
-		this.pageBigSize = this.pageNo * this.pageSize;
+		this.pNo = (this.pageNo - 1) * this.pageSize;
+		this.pSize = this.pageNo * this.pageSize;
 	}
 
 	public void initPageSize() {
@@ -72,12 +85,12 @@ public class Page {
 				String[] qsSub = s.split("=");
 				if ("pageNo".equals(qsSub[0]))
 					this.pageNo = Integer.parseInt(qsSub[1]);
-				else if ("pageSize".equals(qsSub[0]))
-					this.pageSize = Integer.parseInt(qsSub[1]);
-				else if ("itemCount".equals(qsSub[0]))
-					this.itemCount = Integer.parseInt(qsSub[1]);
-				else if ("pageCount".equals(qsSub[0])) {
-					this.pageCount = Integer.parseInt(qsSub[1]);
+				else if ("pageSize".equals(qsSub[0].trim()))
+					this.pageSize = Integer.parseInt(qsSub[1].trim());
+				else if ("itemCount".equals(qsSub[0].trim()))
+					this.itemCount = Integer.parseInt(qsSub[1].trim());
+				else if ("pageCount".equals(qsSub[0].trim())) {
+					this.pageCount = Integer.parseInt(qsSub[1].trim());
 				} else if ((qsSub.length > 1) && (qsSub[1] != null))
 					this.searchKeys = (this.searchKeys + "&" + qsSub[0] + "=" + qsSub[1]);
 				else
@@ -86,20 +99,22 @@ public class Page {
 		}
 	}
 
-	public int getPageNum() {
-		return pageNum;
+
+	
+	public int getpNo() {
+		return pNo;
 	}
 
-	public void setPageNum(int pageNum) {
-		this.pageNum = pageNum;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
 
-	public int getPageBigSize() {
-		return pageBigSize;
+	public int getpSize() {
+		return pSize;
 	}
 
-	public void setPageBigSize(int pageBigSize) {
-		this.pageBigSize = pageBigSize;
+	public void setpSize(int pSize) {
+		this.pSize = pSize;
 	}
 
 	public int getPageNo() {
