@@ -24,7 +24,8 @@
 
 //查询
 function productListQuery(){
-	window.location.href="/loginAction/productListQuery";
+	var productName = $("#productName").val();
+	window.location.href="/loginAction/productListQuery?productName="+productName;
 }
 //添加
 function addOrUpdatePage(){
@@ -81,6 +82,7 @@ function changeClear(url){
 	<table width="100%" border="1" cellspacing="1" cellpadding="2" class="tableNormal">
 		<thead>
 			<tr>
+				<th>序号</th>
 				<th>产品名称</th>
 				<th>产品类型</th>
 				<th>入库时间</th>
@@ -89,17 +91,19 @@ function changeClear(url){
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${requestScope.list}" var="p">
+			<c:forEach items="${requestScope.list}" var="p" varStatus="vs">
 					<tr>
-						<td style="text-align: left;">${p.productName}</td>
-						<td style="text-align: left;">${p.productType}</td>
-						<td style="text-align: left;">${p.addTime}</td>
-						<td style="text-align: left;">${p.operator}</td>
-						<td style="text-align: left;">${p.remarks}</td>
+						<td>${vs.index+1}</td>
+						<td style="text-align: left;">${p.bankid}</td>
+						<td style="text-align: left;">${p.id}</td>
+						<td style="text-align: left;">${p.psamid}</td>
+						<td style="text-align: left;">${p.merchantCnName}</td>
+						<td style="text-align: left;">${p.merchantPhone}</td>
 					</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<div style="width: 100%;" class="framePage" >${pages}</div>
 	<table width="100%" border="0" cellspacing="1" cellpadding="3"class="tableNormal">
 		<tr>
 			<td>
