@@ -40,6 +40,31 @@ function changeClear(url){
 	$("#checkOutDateVo").val("");
 	$("#operator").val("");
 }
+
+//复选框全选
+function selectAll(){  
+    if($("#allCheck").is(':checked') == true){
+		$("input[name='check']").each(function(){
+		   $(this).prop("checked",true);
+		  });
+	}else{
+		$("input[name='check']").each(function(){
+		   $(this).prop("checked",false);
+		  });
+	} 
+}  
+//子复选框的事件  
+function setSelectAll(){  
+    //当没有选中某个子复选框时，SelectAll取消选中  
+    if (!$("input[name='check']").checked) {  
+        $("#allCheck").attr("checked", false);  
+    }  
+    var chsub = $("input[type='checkbox'][name='check']").length; //获取subcheck的个数  
+    var checkedsub = $("input[type='checkbox'][id='subcheck']:checked").length; //获取选中的subcheck的个数  
+    if (checkedsub == chsub) {  
+        $("#allCheck").attr("checked", true);  
+    }  
+}
 </script>
 <style type="text/css">
 .tableNormal {
@@ -82,6 +107,9 @@ function changeClear(url){
 	<table width="100%" border="1" cellspacing="1" cellpadding="2" class="tableNormal">
 		<thead>
 			<tr>
+			<th width="3%" style="text-align: center;"><input
+					type="checkbox" id="allCheck" name="allCheck"
+					onclick="selectAll()" /></th> 
 				<th>序号</th>
 				<th>产品名称</th>
 				<th>产品类型</th>
@@ -93,6 +121,9 @@ function changeClear(url){
 		<tbody>
 			<c:forEach items="${requestScope.list}" var="p" varStatus="vs">
 					<tr>
+						<td width="3%" style="text-align: center;"><input
+					type="checkbox" id="check" name="check" onclick="setSelectAll()"
+					value="${p.id}	" /></td>
 						<td>${vs.index+1}</td>
 						<td style="text-align: left;">${p.bankid}</td>
 						<td style="text-align: left;">${p.id}</td>
