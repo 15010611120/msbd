@@ -46,8 +46,8 @@ public class Page {
 	
 	/**
 	 * 
-	 * @param actionName 是reuestMapping的值
-	 * @param mapParam 是页面中的查询条件
+	 * @param actionName reuestMapping值
+	 * @param mapParam 页面中的查询条件
 	 */
 	public Page(String actionName, Map mapParam) {
 		String queryString = mapParam.toString();
@@ -60,7 +60,9 @@ public class Page {
 		pageSum();
 	}
 
-	// 计算最小行
+	/**
+	 * 计算分页--每页显示条数
+	 */
 	public void pageSum() {
 		this.pNo = (this.pageNo - 1) * this.pageSize+1;
 		this.pSize = this.pageNo * this.pageSize;
@@ -78,6 +80,10 @@ public class Page {
 					Integer.valueOf(100) };
 	}
 
+	/**
+	 * 初始化查询条件
+	 * @param queryString
+	 */
 	private void initQueryString(String queryString) {
 		if (queryString != null) {
 			String[] qs = queryString.split(",");
@@ -92,9 +98,9 @@ public class Page {
 				else if ("pageCount".equals(qsSub[0].trim())) {
 					this.pageCount = Integer.parseInt(qsSub[1].trim());
 				} else if ((qsSub.length > 1) && (qsSub[1] != null))
-					this.searchKeys = (this.searchKeys + "&" + qsSub[0] + "=" + qsSub[1]);
+					this.searchKeys = (this.searchKeys + "&" + qsSub[0].trim() + "=" + qsSub[1]);
 				else
-					this.searchKeys = (this.searchKeys + "&" + qsSub[0] + "=");
+					this.searchKeys = (this.searchKeys + "&" + qsSub[0].trim() + "=");
 			}
 		}
 	}
@@ -239,7 +245,9 @@ public class Page {
 		}
 		return (this.pageNo - 1) * this.pageSize;
 	}
-
+	
+	/**↓↓ the start ↓↓**/
+	/*	组装页面展示的分页*/
 	public String getPageInfo() {
 		StringBuffer s = new StringBuffer();
 
@@ -328,5 +336,6 @@ public class Page {
 		s.append("</select>");
 		return s;
 	}
+	/**↑↑ the end ↑↑**/
 
 }

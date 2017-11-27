@@ -4,8 +4,8 @@ public class PageSqlUtil {
 	
 	/**
 	 * oracle 分页sql
-	 * @param sql
-	 * @param p
+	 * @param sql-->sql
+	 * @param p-->分页对象
 	 * @return
 	 */
 	public static String pageSqlUtil(String sql,Page p) {
