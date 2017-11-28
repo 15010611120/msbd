@@ -14,7 +14,11 @@
 		<version>1.4.5.RELEASE</version>
 	</parent>
   	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  		<!-- 文件拷贝时的编码 -->  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
+        <!-- 编译时的编码 -->  
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
 		<java.version>1.8</java.version>
 		<tomcat.version>8.5.20</tomcat.version>
 	</properties>
@@ -104,11 +108,11 @@
 			<artifactId>fastdfs-client-java</artifactId>
 			<version>5.0.0</version>
 		</dependency>
-		<!-- <dependency>  
+		 <dependency>  
 	      <groupId>com.github.pagehelper</groupId>  
 	      <artifactId>pagehelper-spring-boot-starter</artifactId>  
 	      <version>1.0.0</version>  
-		</dependency> -->
+		</dependency>
 		
 		 <dependency>
             <groupId>tk.mybatis</groupId>
@@ -125,6 +129,16 @@
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
   </dependencies>
   
   <build>

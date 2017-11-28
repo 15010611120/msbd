@@ -105,7 +105,7 @@
 
 <!-- 右侧内容展示==================================================   -->   		
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-			<h1 class="page-header"><i class="fa fa-cog fa-spin"></i>&nbsp;控制台<small>&nbsp;&nbsp;&nbsp;欢迎使用yxd后台管理系统</small></h1>
+			<!-- <h1 class="page-header"><i class="fa fa-cog fa-spin"></i>&nbsp;控制台<small>&nbsp;&nbsp;&nbsp;欢迎使用yxd后台管理系统</small></h1> -->
 				<iframe id="content" scrolling="auto" frameborder="0" width="100%" height="700px" src="http://www.w3school.com.cn/tags/att_iframe_scrolling.asp"/>
 		</div> 
 	</body>
