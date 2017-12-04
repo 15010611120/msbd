@@ -15,6 +15,6 @@ public interface ConsumptionRecordMapper extends Mapper<ConsumptionRecord> {
 	@SelectProvider(type = ConsumptionRecordMapperSql.class, method = "findConsumptionRecordPageList")
 	public List<ConsumptionRecord> findPageList(Map<String, Object> map);
 	
-	@SelectProvider(type = ConsumptionRecordMapperSql.class, method = "findConsumptionRecordCount")
+	@SelectProvider(type = ConsumptionRecordMapperSql.class, method = "queryConsumptionRecordTercount")
 	public int findCount();
 }
