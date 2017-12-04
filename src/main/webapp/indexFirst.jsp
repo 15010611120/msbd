@@ -89,7 +89,7 @@
 							<i class="fa fa-file-text"></i>&nbsp; 订单管理 <span class="sr-only">(current)</span></a>
 						</li> 
 						<ul id="recordMeun" class="nav nav-list collapse menu-second">
-							<li><a href="javascript:void(0)" onclick="changeSrc('recordList.jsp')" ><i class="fa fa-list"></i> 订单列表</a></li>
+							<li><a href="javascript:void(0)" onclick="changeSrc('orderListJump')" ><i class="fa fa-list"></i> 订单列表</a></li>
 							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-list"></i> 计算器&nbsp;&nbsp;&nbsp;</a></li>
 						</ul>
 						<li><a href="#luckDrawMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
@@ -97,6 +97,12 @@
 						</li> 
 						<ul id="luckDrawMeun" class="nav nav-list collapse menu-second">
 							<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/calculator')" ><i class="fa fa-users"></i> 抽奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+						</ul>
+						<li><a href="#CounsumptionMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-users"></i>&nbsp; 消费记录<span class="sr-only">(current)</span></a>
+						</li> 
+						<ul id="CounsumptionMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('consumptionJump')" ><i class="fa fa-users"></i> 消费记录</a></li>
 						</ul>
 					</ul>
 				</div>
