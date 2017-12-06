@@ -736,7 +736,7 @@ fieldset input,select {
 	margin: 5px 0px;
 	padding: 3px;
 	white-space: nowrap;
-	text-align: right;
+	text-align: left;
 	min-height: 20px;
 	background-image: url(../images/bg/line_gray05.gif);
 	background-repeat: repeat-x;

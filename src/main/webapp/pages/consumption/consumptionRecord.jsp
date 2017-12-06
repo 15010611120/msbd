@@ -22,6 +22,7 @@
 
 <title>消费记录</title>
 <script type="text/javascript">
+var session_email = '<%=session.getAttribute("email")%>';
 //初始化复选框
 $(document).ready( function (){
 	createLoadPromptMaskLayer('body','maskLayer','maskLayerPrompt','数据正在查询中，请稍后...','font_yh16');
@@ -41,7 +42,7 @@ function consumptionListQuery(){
 	var consumptionStarTime= $("#consumptionStarTime").val();
 	var consumptionEndTime= $("#consumptionEndTime").val();
 	var consumptionOP = $("#consumptionOP").val();
-	window.location.href="/consumptionListQuery?consumptionName="+consumptionName
+	window.location.href="${pageContext.request.contextPath}/consumptionListQuery?consumptionName="+consumptionName
 			+"&consumptionType="+consumptionType
 			+"&consumptionStarTime="+consumptionStarTime
 			+"&consumptionEndTime="+consumptionEndTime
@@ -57,7 +58,7 @@ function clearAll(){
 }
 //添加
 function addOrUpConsumption(){
-	var url = "/addConsumptionJump"
+	var url = "${pageContext.request.contextPath}/addConsumptionJump"
 	showPopWinNoBtn(url,'添加消费记录','50%',260);
 }
 </script>

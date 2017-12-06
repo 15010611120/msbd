@@ -18,9 +18,10 @@
 		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
+		var contextPath = "${pageContext.request.contextPath}";
 		var session_email = '<%=session.getAttribute("email")%>';
 		if(session_email == "null"){
-				window.location.href="/login";
+				window.location.href="${pageContext.request.contextPath}/login";
 		}
 		/*
 		 * 对选中的标签激活active状态，对先前处于active状态但之后未被选中的标签取消active

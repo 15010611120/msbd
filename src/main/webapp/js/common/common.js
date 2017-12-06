@@ -694,7 +694,7 @@ function createLoadPromptMaskLayer(objParentElem, objParent, objItem, objPrompt,
 		"class" : "maskLayerGrayPrompt"
 	}).appendTo($('#' + objParent));
 
-	var objLoadImg = '<img src="images/pics/loding.gif" border="0" hspace="3" align="absmiddle" />&nbsp;';
+	var objLoadImg = '<img src="images/loading.gif" border="0" hspace="3" align="absmiddle" />&nbsp;';
 	var objText = "数据努力加载中......";
 	if (objPrompt != '') objText = objPrompt;
 

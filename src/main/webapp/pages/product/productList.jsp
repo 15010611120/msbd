@@ -19,11 +19,13 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/common/popWindow.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/My97DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/product/product.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common/common.js"></script>
 
 <title>产品列表</title>
 <script type="text/javascript">
 //初始化复选框
 $(document).ready( function (){
+	createLoadPromptMaskLayer('body','maskLayer','maskLayerPrompt','数据正在查询中，请稍后...','font_yh16');
 	var selectid="${mapP['selectId']}";
 	$("input[name=check]").each(function(){
 		var sid = $(this).val().trim();
@@ -32,6 +34,7 @@ $(document).ready( function (){
 		}
 	});
 });
+var contextPath = "${pageContext.request.contextPath}";
 </script>
 </head>
 <body>
@@ -97,7 +100,7 @@ $(document).ready( function (){
 	<div style="width: 100%;" class="framePage" >${pages}</div>
 	<table width="100%" border="0" cellspacing="1" cellpadding="3"class="tableNormal">
 		<tr>
-			<td>
+			<td style="text-align: left;">
 				<input type="button" name="btnAdd" id="btnAdd" class="btn_create" onclick="addOrUpdatePage()" value="新增" />
 				<input type="button" name="btnUpdate" id="btnUpdate" class="btn_create"  onclick="" value="修改" />
 				<input type="button" name="btnDel" id="btnDel" class="btn_delete" onclick="" value="删除" />

@@ -23,7 +23,7 @@
 <script type="text/javascript">
 
 function jumpBlack(){
-	parent.window.location="/loginAction/productListJump";
+	parent.window.location="${pageContext.request.contextPath}/loginAction/productListJump";
 	closewin("winPanel");
 }
 </script>

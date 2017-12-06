@@ -1,7 +1,7 @@
 //查询
 function productListQuery(){
+	controlLoadPromptMaskLayer('#maskLayer','#maskLayerPrompt');
 	var productName = $("#productName").val();
-	
 	//被选中的复选框
 	var selectId="";
 	$('input[name="check"]:checked').each(function(){   
@@ -12,15 +12,23 @@ function productListQuery(){
 		}
 	});
 	
-	window.location.href="/loginAction/productListQuery?productName="+productName+"&selectId="+selectId;
+	window.location.href=contextPath+"/loginAction/productListQuery?productName="+productName+"&selectId="+selectId;
 }
 
 function exportProduct(){
-	window.location.href="/loginAction/exportProduct?productName="+productName;
+	var selectId="";
+	$('input[name="check"]:checked').each(function(){   
+		if(selectId==""){
+			selectId=$(this).val(); 
+		}else{
+			selectId = selectId+","+$(this).val();  
+		}
+	});
+	window.location.href=contextPath+"/loginAction/exportProduct?selectId="+selectId;
 }
 //添加
 function addOrUpdatePage(){
-	var url = "/loginAction/productAdd"
+	var url = contextPath+"/loginAction/productAdd"
 	showPopWinNoBtn(url,'添加产品','40%',220);
 }
 //重置

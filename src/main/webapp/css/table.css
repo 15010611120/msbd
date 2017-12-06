@@ -21,7 +21,7 @@
 	margin: 1px;
 	border-bottom: none;
 	white-space: nowrap;
-	text-align: left;
+	text-align: center;
 	height: 23px;
 	background-image: url(../images/bg/line_gray05.gif);
 	background-repeat: repeat-x;
@@ -31,6 +31,10 @@
 .tableNormal td {
 	height: 23px;
 	padding: 3px;
+	text-align: center;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
 }
 
 .tableNormal input {

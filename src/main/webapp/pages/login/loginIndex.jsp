@@ -22,7 +22,7 @@ function login(){
 	var userPwd=$("#password").val();
 	$.ajax({   
         type:'post',        
-        url:'/loginChecked',    
+        url:'${pageContext.request.contextPath}/loginChecked',    
         data:{
         	email:email,
         	userPwd:userPwd
@@ -31,7 +31,7 @@ function login(){
         dataType:'json',    
         success:function(data){   
            if(data.rspCode=="00"){
-           	 window.location.href="/loginIndex";
+           	 window.location.href="${pageContext.request.contextPath}/loginIndex";
            }else{
            	alert(data.rspMsg);
            }
@@ -41,7 +41,7 @@ function login(){
 
 //注册
 function register(){
-	window.location.href="/register";
+	window.location.href="${pageContext.request.contextPath}/register";
 }
 
 </script>
@@ -72,7 +72,7 @@ function register(){
 			</form>
 		</div>
 		<div class="go-regist">
-			<a href="#" class="link" onclick="register('loginAction/productListJump')">注册</a>&nbsp;|&nbsp;已有帐号,<a href="#" class="link">忘记密码</a>
+			<a href="#" class="link" onclick="register()">注册</a>&nbsp;|&nbsp;已有帐号,<a href="#" class="link">忘记密码</a>
 		</div>
 	</div>
 </div>
