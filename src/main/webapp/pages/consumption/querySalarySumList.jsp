@@ -134,7 +134,7 @@ function addAndUpdateSalary(){
 		<tr>
 			<td style="text-align: left;">
 				<input type="button" name="btnAdd" id="btnAdd" class="btn_create" onclick="addAndUpdateSalary()" value="新增薪资" />
-				<input type="button" name="btnUpdate" id="btnUpdate" class="btn_create"  onclick="" value="修改修改" />
+				<input type="button" name="btnUpdate" id="btnUpdate" class="btn_create"  onclick="" value="修改薪资" />
 				<input type="button" name="btnLog" id="btnLog" class="btn_act" onclick="" value="操作日志" />
 			</td>
 		</tr>
