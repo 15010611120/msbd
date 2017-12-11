@@ -6,6 +6,7 @@ package com.yxd.model;
  */
 public class Salary {
 
+	private Integer id;
 	private String basicSalary;//基本
 	private String accumulationFund;//公积金
 	private String medicalInsurance;//医保
