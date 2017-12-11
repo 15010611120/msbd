@@ -76,7 +76,7 @@ public class SpringBootLoginController {
 	@RequestMapping("/loginIndex")
 	@ResponseBody
 	public ModelAndView loginIndex(HttpSession session){
-		return new ModelAndView("/indexFirst");
+		return new ModelAndView("indexFirst");
 	}
 	
 	/**
@@ -87,7 +87,7 @@ public class SpringBootLoginController {
 	@RequestMapping("/register")
 	@ResponseBody
 	public ModelAndView register(HttpSession session){
-		return new ModelAndView("/pageslogin/register");
+		return new ModelAndView("/pages/login/register");
 	}
 
 }
