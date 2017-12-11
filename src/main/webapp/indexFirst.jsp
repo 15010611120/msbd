@@ -103,6 +103,7 @@
 							<i class="fa fa-users"></i>&nbsp; 消费记录<span class="sr-only">(current)</span></a>
 						</li> 
 						<ul id="CounsumptionMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('salaryJump')" ><i class="fa fa-users"></i> 薪资记录</a></li>
 							<li><a href="javascript:void(0)" onclick="changeSrc('consumptionJump')" ><i class="fa fa-users"></i> 消费记录</a></li>
 						</ul>
 					</ul>

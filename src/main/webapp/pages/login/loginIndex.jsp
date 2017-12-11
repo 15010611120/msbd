@@ -67,7 +67,7 @@ function register(){
 					<input type="password" value="" class="input-text-password noPic input-click" name="password" id="password">
 				</div>
 				<div class="row btnArea">
-					<a class="login-btn" id="submit" onClick="login()">登录</a>
+					<a class="login-btn" style="cursor:pointer;" id="submit" onClick="login()">登录</a>
 				</div>
 			</form>
 		</div>
