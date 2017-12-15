@@ -3,6 +3,7 @@ package com.yxd.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +11,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;  
  
 @Configuration
-public class RedisConfiguration {
+public class RedisConfiguration extends CachingConfigurerSupport {
 	  
     @Bean(name= "jedis.pool")  
     @Autowired  
@@ -30,5 +31,18 @@ public class RedisConfiguration {
         config.setMaxWaitMillis(maxWaitMillis);  
         return config;  
     }  
+    /*@SuppressWarnings("rawtypes")
+	@Bean
+    public CacheManager cacheManager(RedisTemplate redisTemplate) {
+        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
+        //设置缓存过期时间
+        Map<String, Long> expires = new HashMap<>();
+        expires.put("12h",3600 * 12L);
+        expires.put("1h",3600 * 1L);
+        expires.put("10m",60 * 5L);
+        rcm.setExpires(expires);
+//        rcm.setDefaultExpiration(60 * 60 * 12);//秒
+        return rcm;
+    }*/
       
 }

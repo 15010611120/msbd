@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-public class RedisCacheConfig extends CachingConfigurerSupport {
+public class RedisCacheConfig_fail extends CachingConfigurerSupport {
 	/**
      * 生成key的策略
      *

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+@SuppressWarnings("null")
 @Component
 public class RedisUtils {
 	@Autowired  
@@ -72,7 +73,6 @@ public class RedisUtils {
      * @throws Exception
      */
     public String get(String key) throws Exception  {  
-  
         Jedis jedis = null;  
         try {  
             jedis = jedisPool.getResource();  
@@ -87,7 +87,6 @@ public class RedisUtils {
      * 删除对应的Value
      * @param key
      */
-    @SuppressWarnings("null")
 	public void remove(String key) throws Exception{
     	 Jedis jedis = null; 
     	 try {
@@ -97,5 +96,22 @@ public class RedisUtils {
          jedis.close();  
 		}
     }
+	
+	/**
+	 * 读取键失效时间
+	 * @param key
+	 * @return
+	 * @throws Exception
+	 */
+	public Long ttl(String key) throws Exception  {  
+        Jedis jedis = null;  
+        try {  
+            jedis = jedisPool.getResource();  
+            return jedis.ttl(key); 
+        } finally {  
+            //返还到连接池  
+            jedis.close();  
+        }  
+    }  
 
 }
