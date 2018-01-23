@@ -16,13 +16,18 @@
 <script type="text/javascript" src="js/loginJs/md5.js"></script>
 <script type="text/javascript" src="js/loginJs/page_regist.js?lang=zh"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	  if (window.parent != window){
+	   window.top.location.href = location.href;
+	  }
+	 });
 //登陆验证
 function login(){
 	var email=$("#email").val();
 	var userPwd=$("#password").val();
 	$.ajax({   
         type:'post',        
-        url:'${pageContext.request.contextPath}/loginChecked',    
+        url:'${pageContext.request.contextPath}/checkedlogin',    
         data:{
         	email:email,
         	userPwd:userPwd

@@ -59,7 +59,7 @@
 					<ul class="nav navbar-nav navbar-right">			            
 						<li><a href="javascript:void(0)" onclick="changeSrc('/loginAction/userListJump')"><i class="fa fa-user"></i> 用户列表</a></li>	
 						<li><a href="javascript:void(0)" onclick="changeSrc('loginAction/productListJump')"><i class="fa fa-list-alt"></i> 产品列表</a></li>
-						<li><a href="javascript:void(0)" onclick="" ><i class="fa fa-list"></i> 订单列表</a></li>	
+						<li><a href="javascript:void(0)" onclick="changeSrc('orderListJump')" ><i class="fa fa-list"></i> 订单列表</a></li>	
 					</ul>
           			
         		</div>

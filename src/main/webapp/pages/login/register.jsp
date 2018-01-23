@@ -46,10 +46,6 @@
 				<input type="text" value="" class="input-text-user noPic input-click" name="tel" id="tel">
 			</div>
 			<div class="row">
-				<label class="field" for="address">公司地址</label>
-				<input type="text" value="" class="input-text-user noPic input-click" name="address" id="address">
-			</div>
-			<div class="row">
 				<label class="field" for="qq">QQ</label>
 				<input type="text" value="" class="input-text-user noPic input-click" name="qq" id="qq">
 			</div>
