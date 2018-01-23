@@ -12,7 +12,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter{
 	     public  boolean preHandle(HttpServletRequest request,  
 	            HttpServletResponse response, Object handler) throws Exception { 
 	        String url = request.getRequestURI();  
-	        if(url.endsWith("/login") || url.endsWith("/checkedlogin"))
+	        if(url.endsWith("login"))
 	        	return true;
 	        HttpSession session = request.getSession();
 	        if(session != null && session.getAttribute("email") != null)   
