@@ -52,7 +52,7 @@
 		            	<span class="icon-bar"></span>
 		            	<span class="icon-bar"></span>
 					</button>
-	          		<a class="navbar-brand" href="index.jsp">yangxiaodong.com</a>
+	          		<a class="navbar-brand" href="indexFirst.jsp">yangxiaodong.com</a>
         		</div>
         		
 				<div id="navbar" class="navbar-collapse collapse">
@@ -105,6 +105,12 @@
 						<ul id="CounsumptionMeun" class="nav nav-list collapse menu-second">
 							<li><a href="javascript:void(0)" onclick="changeSrc('salaryJump')" ><i class="fa fa-users"></i> 薪资记录</a></li>
 							<li><a href="javascript:void(0)" onclick="changeSrc('consumptionJump')" ><i class="fa fa-users"></i> 消费记录</a></li>
+						</ul>
+						<li><a href="#xinyongMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+							<i class="fa fa-users"></i>信用卡账单<span class="sr-only">(current)</span></a>
+						</li> 
+						<ul id="xinyongMeun" class="nav nav-list collapse menu-second">
+							<li><a href="javascript:void(0)" onclick="changeSrc('getLoginMailJump')" ><i class="fa fa-users"></i>行用卡账单</a></li>
 						</ul>
 					</ul>
 				</div>
