@@ -70,7 +70,7 @@ public class Page {
 
 	public void initPageSize() {
 		if (this.pageSize == 0)
-			this.pageSize = 10;
+			this.pageSize = 15;
 	}
 
 	public void initPageList() {
